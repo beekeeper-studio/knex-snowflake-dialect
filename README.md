@@ -1,0 +1,36 @@
+# NOTE
+This code was forked from the folks over at `Deliverr, Inc`. The original license is in this repo.
+
+# knex-snowflake-dialect
+knex.js dialect for the Snowflake data warehouse.
+
+As of release 0.2.x, the `connect` and `raw` query methods have been tested, along with schema migrations.
+
+## Installation
+
+```shell script
+npm install knex-snowflake-dialect
+```
+
+## Usage
+
+Sample initialization:
+
+```javascript
+import * as knex from "knex";
+import { SnowflakeDialect } from "knex-snowflake-dialect";
+
+export const Snowflake = knex({
+  client: SnowflakeDialect,
+  debug: true,
+  connection: "snowflake://myuser:mypassword@myaccount.myregion.snowflakecomputing.com/mydb?warehouse=MY_WAREHOUSE",
+  pool: {
+    min: 1,
+    max: 1
+  }
+});
+```
+
+The configuration could alternatively break out the `connection` parameters as separate keys, per the 
+[snowflake-sdk "Establishing a Connection"](https://docs.snowflake.net/manuals/user-guide/nodejs-driver-use.html#establishing-a-connection)
+documentation.

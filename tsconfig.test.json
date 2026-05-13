@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": null,
+    "declaration": false,
+    "sourceMap": false,
+    "types": ["jest", "node", "sinon"],
+    "strict": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "useUnknownInCatchVariables": false,
+    "isolatedModules": true
+  },
+  "include": ["src", "test"],
+  "exclude": ["node_modules", "lib"]
+}
