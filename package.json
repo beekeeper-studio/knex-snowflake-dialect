@@ -4,12 +4,12 @@
   "description": "knex.js dialect for the Snowflake data warehouse",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "directories": {
-    "lib": "lib"
-  },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "clean": "rm -rf lib/",
+    "clean": "rm -rf lib/ tsconfig.build.tsbuildinfo",
     "lint": "eslint 'src/**/*.ts'",
     "lint-fix": "eslint --fix 'src/**/*.ts'",
     "test": "yarn run lint && jest --runInBand --silent --forceExit --detectOpenHandles",
