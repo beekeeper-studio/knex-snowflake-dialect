@@ -16,27 +16,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Install Node.js, PNPM
+        uses: jdx/mise-action@v5
         with:
-          node-version-file: '.nvmrc'
-
-      - name: Update npm
-        run: npm install -g npm@latest
+          cache: false
 
       - name: Get tag version
         id: get_version
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm ci
 
       - name: Update package version
         run: |
-          yarn version --new-version $VERSION --no-git-tag-version
+          pnpm version --new-version $VERSION --no-git-tag-version
 
       - name: Build package
-        run: yarn build
+        run: pnpm build
 
       - name: Publish package
-        run: npm publish --access public
+        run: pnpm publish --access public
