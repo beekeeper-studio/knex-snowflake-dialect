@@ -12,7 +12,7 @@
     "clean": "rm -rf lib/ tsconfig.build.tsbuildinfo",
     "lint": "eslint 'src/**/*.ts'",
     "lint-fix": "eslint --fix 'src/**/*.ts'",
-    "test": "yarn run lint && jest --runInBand --silent --forceExit --detectOpenHandles",
+    "test": "pnpm run lint && jest --runInBand --silent --forceExit --detectOpenHandles",
     "coverage": "jest --coverage --silent && open coverage/lcov-report/index.html"
   },
   "repository": {
