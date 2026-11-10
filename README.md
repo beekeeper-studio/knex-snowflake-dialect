@@ -9,7 +9,7 @@ As of release 0.2.x, the `connect` and `raw` query methods have been tested, alo
 ## Installation
 
 ```shell script
-npm install knex-snowflake-dialect
+npm install @beekeeperstudio/knex-snowflake-dialect
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ Sample initialization:
 
 ```javascript
 import * as knex from "knex";
-import { SnowflakeDialect } from "knex-snowflake-dialect";
+import { SnowflakeDialect } from "@beekeeperstudio/knex-snowflake-dialect";
 
 export const Snowflake = knex({
   client: SnowflakeDialect,
